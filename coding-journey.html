@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-ZW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Coding Journey — Lawson Chiwara</title>
+  <meta name="description" content="Lawson Chiwara's coding journey: education-focused projects including a school census tool concept, a ZIMSEC English revision project, the Zaka District Schools Hub and the My English Lessons Android app.">
+  <link rel="canonical" href="https://lawchiwara0-droid.github.io/coding-journey.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="My Coding Journey — Lawson Chiwara">
+  <meta property="og:description" content="Learning to build practical digital tools for education.">
+  <meta property="og:url" content="https://lawchiwara0-droid.github.io/coding-journey.html">
+  <meta property="og:image" content="https://lawchiwara0-droid.github.io/lawson.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #0f3d5e;
+      --accent: #a85410;
+      --bg: #f8f9fa;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --border: #d9e2ec;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    section:target h2 { color: var(--accent); border-bottom-color: var(--accent); }
+    section:target .card { border-color: var(--accent); background-color: #fffdf5; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #19547b 100%);
+      color: #ffffff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .author-photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      margin-bottom: 16px;
+    }
+    header h1 { font-size: 2.4rem; letter-spacing: 0.5px; margin-bottom: 8px; }
+    header p.tagline { font-size: 1.15rem; opacity: 0.92; max-width: 720px; margin: 0 auto 18px; }
+    .social-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+    .social-pill {
+      color: #ffffff;
+      text-decoration: none;
+      border: 1.5px solid rgba(255, 255, 255, 0.65);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .social-pill:hover { background: #ffffff; color: var(--primary); }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.14);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    nav a:hover { background: rgba(255, 255, 255, 0.28); }
+    a:focus-visible { outline: 3px solid #f2b66d; outline-offset: 2px; }
+    main { max-width: 920px; margin: 0 auto; padding: 35px 20px 60px; }
+    section { margin-bottom: 45px; scroll-margin-top: 20px; }
+    h2 {
+      font-size: 1.55rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+    .featured-book { border-left: 5px solid var(--accent); }
+    .badge {
+      display: inline-block;
+      background: #e6f0fa;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .badge-accent { background: #fdf0e6; color: var(--accent); }
+    h3 { font-size: 1.25rem; margin-bottom: 8px; color: #102a43; }
+    .meta { font-size: 0.88rem; color: var(--muted); margin-bottom: 12px; }
+    ul.features { margin: 12px 0 18px 20px; }
+    ul.features li { margin-bottom: 6px; }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-right: 10px;
+      margin-top: 8px;
+    }
+    .btn:hover { background: #0a2b42; }
+    .btn-outline { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+    .btn-outline:hover { background: #e6f0fa; }
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  
+    .page-title { margin-bottom: 6px; }
+    .lead { color: var(--muted); font-size: 1.05rem; margin-bottom: 14px; }
+    .card p + p, .card ul + p, .card p + ul { margin-top: 10px; }
+    .card ul { margin: 8px 0 8px 20px; }
+    .card ul li { margin-bottom: 4px; }
+    .card h4 { font-size: 1.02rem; margin: 16px 0 6px; color: #102a43; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: #e6f0fa; color: var(--primary); }
+    .back { display: inline-block; margin-bottom: 18px; color: var(--primary); font-weight: 600; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>My Coding Journey</h1>
+  <p class="tagline">Learning to build practical digital tools for education</p>
+  <nav aria-label="Main">
+    <a href="index.html">&larr; Back to Portfolio</a>
+    <a href="#projects">Projects</a>
+    <a href="#challenges">Challenges</a>
+    <a href="#skills">Skills</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#goals">Next Goals</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="intro">
+    <div class="card">
+      <p class="lead">My coding journey is driven by a practical question: how can technology help teachers, learners and schools solve everyday problems?</p>
+      <p>I am developing my skills through education-focused projects, from school census data-entry concepts and English revision resources to a district schools platform and an Android application for a learner in my family.</p>
+      <p>I use AI-assisted development as part of my learning process, alongside defining requirements, reviewing outputs, making design decisions and identifying problems. My journey includes ideas, prototypes, revisions and unfinished work, not only completed applications. My earliest documented project discussions date to July 2026, although that is not necessarily when I first began learning to code.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="card">
+      <span class="badge badge-accent">Concept &bull; July 2026</span>
+      <h3>1. ED46 School Census Data-Entry Tool</h3>
+      <p class="meta">Turning a school administration need into an application concept</p>
+      <p>One of my earliest documented projects explored an offline-first tool for completing school census information. The aim was to make data entry more organised, help users check totals and support report preparation.</p>
+      <p>The proposed application covered:</p>
+      <ul>
+        <li>School profile information and ED46 sections A&ndash;K.</li>
+        <li>Enrolment, staffing, facilities and finance records.</li>
+        <li>Validation and checking of entries.</li>
+        <li>Locally saved drafts.</li>
+        <li>PDF and Excel report exports.</li>
+      </ul>
+      <p>I explored Python, desktop packaging and beginner-friendly low-code alternatives. This was a concept and application-planning project; I am not presenting it as a completed application.</p>
+      <h4>What this contributed to my journey</h4>
+      <p>The project introduced me to translating an administrative process into application requirements: identifying inputs, organising forms, considering validation and planning useful outputs.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge badge-accent">Planning &bull; August 2026</span>
+      <h3>2. ZIMSEC O-Level English Revision Project</h3>
+      <p class="meta">Exploring structured practice and explanatory feedback</p>
+      <p>In August 2026, I explored an offline-first English revision application, initially focused on ZIMSEC O-Level Paper 2 practice.</p>
+      <p>The development plan included:</p>
+      <ul>
+        <li>A question bank and short quizzes.</li>
+        <li>Explanations to help learners understand answers.</li>
+        <li>A small learner pilot.</li>
+        <li>A content-first approach before expanding the software.</li>
+        <li>Possible later Android packaging and offline resources.</li>
+      </ul>
+      <p>A Google Forms pilot and a 20-question learning package were discussed. This project was planning and learning-content development, not a finished standalone application. It is separate from my later Cambridge-focused My English Lessons app.</p>
+      <h4>What this contributed to my journey</h4>
+      <p>This work helped me explore the relationship between educational content and application design: what learners practise, how feedback is presented and how an initial pilot could inform further development.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge badge-accent">Prototype &bull; September 2026</span>
+      <h3>3. Zaka District Schools Hub</h3>
+      <p class="meta">From teacher support to a broader education platform</p>
+      <p>The Zaka District Schools Hub began with an emphasis on helping teachers use AI and develop teaching resources. Its scope later expanded toward learner support and school administration.</p>
+      <p>The project involved AI-assisted HTML, CSS and JavaScript development. In September 2026, I had a running web/APK prototype. The full functionality of every proposed feature has not yet been verified.</p>
+      <p class="meta" style="margin-top:14px;">Screenshots from the running prototype (v7.0):</p>
+      <div class="shots">
+        <figure><img src="shot-hub-roles.jpg" alt="Zaka District Schools Hub role selection screen" loading="lazy" width="400" height="808"><figcaption>Role selection</figcaption></figure>
+        <figure><img src="shot-hub-teacher.jpg" alt="Zaka District Schools Hub teacher quick services" loading="lazy" width="400" height="808"><figcaption>Teacher services</figcaption></figure>
+        <figure><img src="shot-hub-learner.jpg" alt="Zaka District Schools Hub learner quick services" loading="lazy" width="400" height="808"><figcaption>Learner services</figcaption></figure>
+        <figure><img src="shot-hub-leader.jpg" alt="Zaka District Schools Hub school leader quick services" loading="lazy" width="400" height="808"><figcaption>School leader services</figcaption></figure>
+      </div>
+      <h4>Teacher-support direction</h4>
+      <ul>
+        <li>Teacher Mode and subject resources.</li>
+        <li>Lesson-planning and scheme prompts.</li>
+        <li>English resources for Forms 1&ndash;4, followed by broader subject coverage.</li>
+        <li>RBM appraisal and Head/HOD narrative reports.</li>
+        <li>Notices, forms and locally saved records.</li>
+      </ul>
+      <h4>Learner lessons, quizzes and games</h4>
+      <ul>
+        <li>Lessons organised by subject and form.</li>
+        <li>Quizzes with explanatory feedback.</li>
+        <li>Locally saved practice scores.</li>
+        <li>Educational games.</li>
+        <li>A proposed Form 2 Mathematics starting pathway.</li>
+        <li>Short educational-video concepts.</li>
+      </ul>
+      <p>These belong to the Hub&rsquo;s development story rather than being separate completed applications. Full integration and a completed video library have not yet been achieved.</p>
+      <h4>District-services direction</h4>
+      <ul>
+        <li>Teacher, learner and administrator entry points.</li>
+        <li>A school directory.</li>
+        <li>Enrolment reporting.</li>
+        <li>Examinations and results analysis.</li>
+        <li>Submission-status displays.</li>
+        <li>School affiliation and role verification.</li>
+      </ul>
+      <p>This work raised important architecture questions. Saving a record on a phone is not the same as submitting it to a District Office, and selecting an administrator role does not establish a user&rsquo;s identity. A working authenticated district-wide backend does not yet exist.</p>
+      <h4>What this contributed to my journey</h4>
+      <p>The Hub gave me experience defining an expanding product, revising interfaces and recognising the difference between a requested feature, generated code and demonstrated functionality. It also introduced practical questions about navigation, data quality, offline behaviour and permissions.</p>
+    </article>
+
+    <article class="card featured-book">
+      <span class="badge badge-accent">Android App</span>
+      <h3>4. My English Lessons</h3>
+      <p class="meta">An offline-capable Android app supporting Cambridge 0500 self-study</p>
+      <p>I created My English Lessons for a Form 2 learner in my family, to support his independent English study with a focus on Cambridge syllabus 0500. The application brings English lessons, study notes and personal learning records together on an Android device without requiring a constant internet connection.</p>
+      <p class="meta" style="margin-top:14px;">Screenshots from the app on an Android phone:</p>
+      <div class="shots">
+        <figure><img src="shot-english-home.jpg" alt="English Studio home screen showing learning plan progress" loading="lazy" width="400" height="808"><figcaption>Home and progress</figcaption></figure>
+        <figure><img src="shot-english-lessons.jpg" alt="English Studio revision lesson library" loading="lazy" width="400" height="808"><figcaption>Lesson library</figcaption></figure>
+        <figure><img src="shot-english-plan.jpg" alt="English Studio recommended revision schedule" loading="lazy" width="400" height="808"><figcaption>Revision plan</figcaption></figure>
+        <figure><img src="shot-english-share.jpg" alt="English Studio share and export screen" loading="lazy" width="400" height="808"><figcaption>Share and backup</figcaption></figure>
+      </div>
+      <h4>Features</h4>
+      <ul>
+        <li>Lessons and study notes are available locally.</li>
+        <li>Learner entries, lesson updates and progress records persist between app sessions.</li>
+        <li>Learning data is stored on the device without requiring a cloud account.</li>
+        <li>Saved data can be exported as a file for backup or manual sharing.</li>
+        <li>Android&rsquo;s native share menu allows an exported file to be passed to applications such as WhatsApp.</li>
+      </ul>
+      <h4>Technical structure</h4>
+      <p>The application uses HTML, CSS and JavaScript, packaged for Android with Capacitor. Its project components include:</p>
+      <ul>
+        <li><strong>app:</strong> the Android application container, native configuration and bundled web assets.</li>
+        <li><strong>capacitor-android:</strong> the runtime connecting the web interface with Android.</li>
+        <li><strong>capacitor-filesystem:</strong> local file management for learning data and export files.</li>
+        <li><strong>capacitor-share:</strong> access to Android&rsquo;s native sharing flow.</li>
+        <li><strong>Gradle configuration:</strong> build settings used by Android Studio to produce the APK.</li>
+      </ul>
+      <h4>What this contributed to my journey</h4>
+      <p>This project extended my educational application work into Android development. It involved packaging a web interface for mobile use, managing persistent local data and connecting the interface to native file and sharing features. It also gave my work a specific learner and purpose: supporting someone in my family with independent study.</p>
+      <h4>Current scope</h4>
+      <p>The app supports Cambridge 0500 study. It is not an officially endorsed Cambridge product and does not claim complete syllabus coverage. File export is part of the current implementation; importing shared materials and restoring backups are not listed as features until they are built and tested.</p>
+    </article>
+  </section>
+
+  <section id="challenges">
+    <h2>Challenges That Have Shaped My Learning</h2>
+    <div class="card">
+      <h4>Navigation and integration</h4>
+      <p>During Hub updates, some Home and role-selection entry points disappeared while other features remained visible. The cause was not verified, but the issue taught me about revising an application without losing existing functionality.</p>
+      <h4>Accuracy of educational and school information</h4>
+      <p>I challenged incorrect school names and supplied a real school list. I also corrected subject terminology, including Textile Technology and Design. These experiences made accuracy part of the development process, rather than treating generated content as automatically correct.</p>
+      <h4>Offline behaviour</h4>
+      <p>My projects have repeatedly explored offline access, local storage and caching. I discussed service workers and cache updates for the Hub, but I have not shown that every proposed offline feature works reliably. That distinction matters when describing the project publicly.</p>
+      <h4>Local records versus central reporting</h4>
+      <p>I explored how locally saved information differs from records received by a central office. This became a significant design consideration as the Hub expanded from a device-based tool toward district services.</p>
+      <h4>Identity and permissions</h4>
+      <p>I questioned how an application would recognise a genuine administrator and distinguish school roles. Those discussions highlighted architecture needs beyond simply displaying different menus.</p>
+      <h4>Managing an expanding scope</h4>
+      <p>The Hub grew from teacher AI support into learning resources, reporting and district administration. It showed me why I need to distinguish the core prototype from proposed extensions and unfinished integrations.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills I Am Developing</h2>
+    <div class="card">
+      <p>My projects reflect a growing range of activities, rather than a claim that I have mastered every technology.</p>
+      <div class="table-wrap" style="margin-top: 12px;">
+        <table>
+          <thead><tr><th>Area</th><th>Experience</th></tr></thead>
+          <tbody>
+            <tr><td>Problem definition</td><td>Turning education and administration needs into application requirements</td></tr>
+            <tr><td>Educational content</td><td>Planning lessons, revision activities, quizzes and explanations</td></tr>
+            <tr><td>Interface design</td><td>Organising forms, navigation and role-based entry points</td></tr>
+            <tr><td>Web development</td><td>Iterating on AI-assisted HTML, CSS and JavaScript prototypes</td></tr>
+            <tr><td>Project review</td><td>Identifying incorrect information, missing screens and unverified features</td></tr>
+            <tr><td>Architecture awareness</td><td>Exploring offline access, storage, reporting and identity requirements</td></tr>
+            <tr><td>Android packaging</td><td>Capacitor, Android Studio, Gradle, local file persistence and native sharing</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai">
+    <h2>My Use of AI in Development</h2>
+    <div class="card">
+      <p>AI assistance is part of my coding journey. I use it to explore approaches, develop drafts, organise requirements and work through revisions.</p>
+      <p>My contribution includes identifying the problem, deciding what the application should do, supplying educational context, reviewing outputs, questioning inaccuracies and directing changes. My project history documents both AI-assisted prototyping and occasions when I challenged incorrect or unsupported outputs.</p>
+      <p>I want my portfolio to show this process honestly: what I attempted, what I changed, what I can demonstrate and what I am still learning.</p>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Project Timeline</h2>
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Period</th><th>Milestone</th><th>Stage</th></tr></thead>
+          <tbody>
+            <tr><td>July 2026</td><td>ED46 school census tool</td><td>Concept and application structure</td></tr>
+            <tr><td>August 2026</td><td>ZIMSEC English revision project</td><td>Roadmap and pilot-content planning</td></tr>
+            <tr><td>September 2026</td><td>Zaka District Schools Hub</td><td>Prototype development; running web/APK prototype</td></tr>
+            <tr><td>September 2026</td><td>Hub learner lessons, quizzes and games</td><td>Content and extension planning</td></tr>
+            <tr><td>September 2026</td><td>District-services expansion</td><td>Interface development and architecture exploration</td></tr>
+            <tr><td>Later</td><td>My English Lessons Android app</td><td>Built for a Form 2 learner studying Cambridge 0500</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="meta" style="margin-top: 12px;">Dates and stages come from my own project notes, not a complete repository or independently tested release history.</p>
+    </div>
+  </section>
+
+  <section id="goals">
+    <h2>My Next Development Goals</h2>
+    <div class="card">
+      <ul>
+        <li>Document each application with screenshots, source files and clear version history.</li>
+        <li>Test features individually and record the results.</li>
+        <li>Separate completed functionality from planned improvements.</li>
+        <li>Improve navigation and usability.</li>
+        <li>Confirm offline behaviour and backup workflows.</li>
+        <li>Strengthen my understanding of authentication and central data storage where projects require them.</li>
+        <li>Keep learner and staff information out of public demos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="direction">
+    <h2>My Direction</h2>
+    <div class="card">
+      <p>I am learning by building tools connected to real educational needs. My journey includes school administration concepts, revision resources, a district schools prototype and an Android study application for a family member.</p>
+      <p>The thread connecting these projects is my interest in making educational support more practical and accessible, and developing the skills to turn those ideas into reliable applications.</p>
+      <a href="index.html#contact" class="btn">Get in Touch</a>
+      <a href="index.html" class="btn btn-outline">Back to Portfolio</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Lawson Chiwara. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
